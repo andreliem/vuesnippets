@@ -1,0 +1,40 @@
+let Tooltip = Vue.component('tooltip',{
+  template: "#tooltipTemplate",
+  props: {
+    show: {
+      type: Boolean,
+      required: true
+    },
+    transition: {
+      type: String,
+      default: 'bounce',
+      required: true 
+    }
+  }
+})
+
+let TooltipButton = Vue.component('tooltipbutton', {
+  template: '#tooltipButton',
+  props: {
+    transition: {
+      type: String,
+      default: 'bounce',
+      required: false
+    }
+  },
+  components: {
+    Tooltip
+  },
+  data () {
+    return {
+      showToolTip: false
+    }
+  }
+})
+
+let App = new Vue({
+  el: '#app',
+  components: {
+    TooltipButton
+  }
+})

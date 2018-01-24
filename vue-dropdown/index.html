@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vue DropDown</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.9.1/tachyons.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+<body class="sans-serif black pa4">
+  <script id="dropdown" type="x/template">
+    <div>
+      <a href="#" v-on:click.prevent="showDropDown=!showDropDown" class="mr2 f6 link br1 bw1 ba ph3 pv1 dib black-40 flex items-center justify-center w4">
+        <div>Catness</div>
+  <img src="https://images.unsplash.com/photo-1511876849877-f8d0d953d2e0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a005647cf42ef9a8c66e1aed85ccc5ec&auto=format&fit=crop&w=3450&q=80" class="br-100 ba b--black-10 h2 w2 mh2" alt="avatar">
+ <i :class="{ 'fa-caret-up': showDropDown, 'fa-caret-down': !showDropDown }" class="fa" aria-hidden="true"></i></a>
+      <transition name="slide-fade">
+        <div class="w4 mt1" v-if="showDropDown">
+          <ul class="menu list pl0 pa0 ma0">
+            <li v-for="link in links" class="list">
+              <a href="#" class="dd-link pointer hover-bg-moon-gray">{{link.name}}</a>
+            </li>
+          </ul>
+      </div>
+      </transition>
+    </div>
+  </script>
+
+  <div id="app">
+    <Dropdown></Dropdown>
+  </div>
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
